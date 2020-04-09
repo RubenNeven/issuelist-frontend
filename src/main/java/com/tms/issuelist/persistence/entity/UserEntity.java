@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Table(name = "users")
 @ToString
 public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

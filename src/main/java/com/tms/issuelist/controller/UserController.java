@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 @RequestMapping("/login")
 public class UserController {
 
     @GetMapping
-    public String displayLoginPage(Model model){
+    public String displayLoginPage(Model model) {
         return "login";
     }
 }

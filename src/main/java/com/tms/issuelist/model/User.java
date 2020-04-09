@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Builder
 @Data
 public class User {
+    private Long id;
     private String userName;
     private String passWord;
     private String firstName;
