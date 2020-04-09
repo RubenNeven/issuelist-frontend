@@ -18,6 +18,7 @@
     color: #4285F4;
 }
 
-.custom {
-    width: 78px;
+.btn-color {
+    background-color: #d61214;
+    border-color: #d61214;
 }

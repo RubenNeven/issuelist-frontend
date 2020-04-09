@@ -1,8 +1,8 @@
 package com.tms.issuelist.service;
 
-import com.tms.issuelist.model.User;
+import org.springframework.stereotype.Service;
 
 public interface UserService {
-    User getUserById(Long id);
+
 
 }

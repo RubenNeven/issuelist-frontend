@@ -1,11 +1,20 @@
-.image-small {
-   max-width: 150px;
+.image-small-navbar {
+   max-width: 100px;
 }
 
 .navbar-custom {
     background-color: #d61214;
 }
 
-li {
+li a {
     color: white;
+    font-size: x-large;
+}
+
+.text-color {
+    color: white;
+}
+
+.right {
+   margin-right: 0;
 }

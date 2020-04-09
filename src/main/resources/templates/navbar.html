@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <title>Navbar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/navbar.css">
-
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{~/css/bootstrap.css}">
+    <link rel="stylesheet" href="../static/css/login.css" th:href="@{~/css/login.css}">
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{~/css/navbar.css}">
+    <link rel="stylesheet" href="../static/css/font-awesome/css/all.css" th:href="@{~/css/font-awesome/css/all.css}"/>
 </head>
 <body>
-<nav class="navbar navbar-custom" th:fragment="navbar">
-    <img class="image-small" src="../static/images/essers-logo.jpg">
-    <ul class="nav nav-tabs ">
-        <li class="nav-item list-custom"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+<nav class="navbar navbar-expand-lg navbar-custom" th:fragment="navbar">
+    <a href="/">
+        <img class="image-small-navbar" src="../static/images/essers-logo.jpg" th:src="@{images/essers-logo.jpg}">
+    </a>
+    <ul class="nav">
+        <li class="nav-item list-custom ml-3 "><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item "><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item "><a href="#" class="nav-link">Contact</a></li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+    <div class="ml-auto">
+        <form class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+
 </nav>
 </body>
 </html>
