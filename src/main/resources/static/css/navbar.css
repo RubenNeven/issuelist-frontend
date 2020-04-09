@@ -1,0 +1,11 @@
+.image-small {
+   max-width: 150px;
+}
+
+.navbar-custom {
+    background-color: #d61214;
+}
+
+li {
+    color: white;
+}

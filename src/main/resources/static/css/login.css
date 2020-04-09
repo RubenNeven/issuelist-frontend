@@ -1,0 +1,23 @@
+.image-small {
+    max-width: 250px;
+}
+
+.fa-twitter-square {
+    color: #1da1f2;
+}
+
+.fa-linkedin {
+    color: #1985bc;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-google {
+    color: #4285F4;
+}
+
+.custom {
+    width: 78px;
+}
