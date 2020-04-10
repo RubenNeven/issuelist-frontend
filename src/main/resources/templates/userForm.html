@@ -11,17 +11,22 @@
 </head>
 <body>
 
-<form modelAttribute="user" th:fragment="userForm">
+<!--/*@thymesVar id="event" type="com.tms.issuelist.model.User"*/-->
+<form modelAttribute="user" th:object="${userForm}" th:fragment="userForm">
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 align-items-center ">
                 <form class="my-3 mx-3">
                     <div class="form-group row" style="font-size: large">
-                        <label for="firstName" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('firstName')}" class="col-4 col-form-label text-right font-weight-bold">
                             First name:
                         </label>
                         <div class="col-4">
-                            <input type="text" id="firstName" class="form-control" placeholder="First name">
+                            <input type="text" id="firstName" class="form-control" placeholder="First name"
+                                   th:field="${userForm.firstName}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+                                  class="errorMessage">First name is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
