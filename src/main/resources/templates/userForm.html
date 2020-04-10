@@ -11,14 +11,15 @@
 </head>
 <body>
 
-<!--/*@thymesVar id="event" type="com.tms.issuelist.model.User"*/-->
+<!--/*@thymesVar id="userForm" type="com.tms.issuelist.model.User"*/-->
 <form modelAttribute="user" th:object="${userForm}" th:fragment="userForm">
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 align-items-center ">
                 <form class="my-3 mx-3">
                     <div class="form-group row" style="font-size: large">
-                        <label th:for="${#ids.next('firstName')}" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('firstName')}"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             First name:
                         </label>
                         <div class="col-4">
@@ -30,58 +31,86 @@
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="lastName" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('lastName')}" for="lastName"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             Last name:
                         </label>
                         <div class="col-4">
-                            <input type="text" id="lastName" class="form-control" placeholder="Last name">
+                            <input type="text" id="lastName" class="form-control" placeholder="Last name"
+                                   th:field="${userForm.lastName}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                                  class="errorMessage">Last name is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="email" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('email')}" for="email"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             E-mail:
                         </label>
                         <div class="col-4">
-                            <input type="text" id="email" class="form-control" placeholder="E-mail">
+                            <input type="text" id="email" class="form-control" placeholder="E-mail"
+                                   th:field="${userForm.emailAddress}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                                  class="errorMessage">E-mail is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="birthDay" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('birthDay')}" for="birthDay"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             Birthday:
                         </label>
                         <div class="col-4">
                             <input type="date" id="birthDay" class="form-control"
                                    placeholder="E-mail"
-                                   min="1900-01-01">
+                                   min="1900-01-01"
+                                   th:field="${userForm.emailAddress}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"
+                                  class="errorMessage">Birthday is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="userName" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('userName')}" for="userName" class="col-4 col-form-label text-right font-weight-bold">
                             Username:
                         </label>
                         <div class="col-4">
-                            <input type="text" id="userName" class="form-control" placeholder="Username">
+                            <input type="text" id="userName" class="form-control" placeholder="Username"
+                                   th:field="${userForm.userName}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                                  class="errorMessage">Username is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="passWord" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('passWord')}" for="passWord" class="col-4 col-form-label text-right font-weight-bold">
                             Password:
                         </label>
                         <div class="col-4">
-                            <input type="password" id="passWord" class="form-control" placeholder="Password">
+                            <input type="password" id="passWord" class="form-control" placeholder="Password"
+                                   th:field="${userForm.passWord}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}"
+                                  class="errorMessage">Password is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label for="confirmPassWord" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('confirmPassWord')}"  for="confirmPassWord" class="col-4 col-form-label text-right font-weight-bold">
                             Confirm password:
                         </label>
                         <div class="col-4">
-                            <input type="password" id="confirmPassWord" class="form-control" placeholder="Password">
+                            <input type="password" id="confirmPassWord" class="form-control" placeholder="Password"
+                                   th:field="${userForm.passWord}"
+                                   th:errorClass="errorField">
+                            <span th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}"
+                                  class="errorMessage">Password is required</span>
                         </div>
                     </div>
                     <div class="form-group-row">
                         <div class="btn-group col-4 offset-4">
-                            <button class="btn btn-primary  left-btn-color" type="submit" value="submit">Confirm</button>
+                            <button class="btn btn-primary  left-btn-color" type="submit" value="submit">Confirm
+                            </button>
                             <a class="btn btn-outline-secondary  right-btn-color" href="/" role="button">Cancel</a>
                         </div>
                     </div>
