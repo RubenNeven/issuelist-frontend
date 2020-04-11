@@ -16,7 +16,7 @@
     <div class="row align-items-center">
         <div class="col">
             <h1 class="px-2 py-2" align="center">Register user</h1>
-            <form th:insert="userForm :: userForm" th:method="post"></form>
+            <form th:insert="userForm :: userForm" th:object="${userForm}" th:method="post"></form>
         </div>
     </div>
 </div>
