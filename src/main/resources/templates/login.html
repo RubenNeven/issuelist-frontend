@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/css/font-awesome/css/all.css" th:href="@{~/css/font-awesome/css/all.css}"/>
 </head>
 <body>
+
 <div class="container">
     <div class="row">
         <div class="col-12 align-items-center ">
@@ -30,27 +31,31 @@
                 </div>
             </div>
 
-            <form class="my-3 mx-3">
+            <!--/*@thymesVar id="loginForm" type="com.tms.issuelist.model.User"*/-->
+            <form class="my-3 mx-3" th:object="${loginForm}" th:fragment="loginForm" th:method="post">
                 <div class="form-group row" style="font-size: large">
-                    <label for="userName" class="col-4 col-form-label text-right font-weight-bold">
+                    <label th:for="${#ids.next('userName')}" class="col-4 col-form-label text-right font-weight-bold" for="userName">
                         Username:
                     </label>
-
                     <div class="col-4">
-                        <input type="text" id="userName" class="form-control" placeholder="Username">
+                        <input type="text" id="userName" class="form-control" placeholder="Username"
+                               th:field="${loginForm.userName}" th:errorClass="errorField">
+                        <span th:if="${#fields.hasErrors('userName')}" class="errorMessage">Username is required</span>
                     </div>
                 </div>
                 <div class="form-group row" style="font-size: large">
-                    <label for="passWord" class="col-4 col-form-label text-right font-weight-bold">
+                    <label th:for="${#ids.next('passWord')}" for="passWord" class="col-4 col-form-label text-right font-weight-bold">
                         Password:
                     </label>
                     <div class="col-4">
-                        <input type="password" id="passWord" class="form-control" placeholder="Password">
+                        <input type="password" id="passWord" class="form-control" placeholder="Password"
+                        th:field="${loginForm.passWord}" th:errorClass="errorField">
+                        <span th:if="${#fields.hasErrors('passWord')}" class="errorMessage">Password is required</span>
                     </div>
                 </div>
                 <div class="form-group-row">
                     <div class="btn-group col-4 offset-4">
-                        <button class="btn btn-primary left-btn-color">Log in</button>
+                        <button type="submit" value="submit" class="btn btn-primary left-btn-color">Log in</button>
                         <a class="btn btn-outline-secondary right-btn-color" href="/register">Sign up</a>
                     </div>
                 </div>

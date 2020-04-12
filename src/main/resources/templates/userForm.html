@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="../static/css/login.css" th:href="@{~/css/login.css}">
     <link rel="stylesheet" href="../static/css/buttons.css" th:href="@{~/css/buttons.css}">
     <link rel="stylesheet" href="../static/css/font-awesome/css/all.css" th:href="@{~/css/font-awesome/css/all.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/error-field.css" th:href="@{~/css/error-field.css}"/>
 </head>
 <body>
 
 <!--/*@thymesVar id="userForm" type="com.tms.issuelist.model.User"*/-->
-<form modelAttribute="user" th:object="${userForm}" th:fragment="userForm">
+<form modelAttribute="user" th:object="${userForm}" th:fragment="userForm" id="userForm">
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 align-items-center ">
@@ -63,16 +64,16 @@
                         </label>
                         <div class="col-4">
                             <input type="date" id="birthDay" class="form-control"
-                                   placeholder="E-mail"
                                    min="1900-01-01"
-                                   th:field="${userForm.emailAddress}"
+                                   th:field="${userForm.birthDay}"
                                    th:errorClass="errorField">
                             <span th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"
                                   class="errorMessage">Birthday is required</span>
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label th:for="${#ids.next('userName')}" for="userName" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('userName')}" for="userName"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             Username:
                         </label>
                         <div class="col-4">
@@ -84,7 +85,8 @@
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label th:for="${#ids.next('passWord')}" for="passWord" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('passWord')}" for="passWord"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             Password:
                         </label>
                         <div class="col-4">
@@ -96,14 +98,15 @@
                         </div>
                     </div>
                     <div class="form-group row" style="font-size: large">
-                        <label th:for="${#ids.next('confirmPassWord')}"  for="confirmPassWord" class="col-4 col-form-label text-right font-weight-bold">
+                        <label th:for="${#ids.next('confirmPassWord')}" for="confirmPassWord"
+                               class="col-4 col-form-label text-right font-weight-bold">
                             Confirm password:
                         </label>
                         <div class="col-4">
                             <input type="password" id="confirmPassWord" class="form-control" placeholder="Password"
-                                   th:field="${userForm.passWord}"
+                                   th:field="${userForm.confirmPassWord}"
                                    th:errorClass="errorField">
-                            <span th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}"
+                            <span th:if="${#fields.hasErrors('confirmPassWord')}" th:errors="*{confirmPassWord}"
                                   class="errorMessage">Password is required</span>
                         </div>
                     </div>

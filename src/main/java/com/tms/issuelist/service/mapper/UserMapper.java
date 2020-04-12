@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMapper {
 
-
     public User map(UserDto userDto) {
         return User.builder()
                 .id(userDto.getId())
@@ -17,6 +16,7 @@ public class UserMapper {
                 .birthDay(userDto.getBirthDay())
                 .userName(userDto.getUserName())
                 .passWord(userDto.getPassWord())
+                .confirmPassWord(userDto.getConfirmPassWord())
                 .build();
 
     }
@@ -30,6 +30,7 @@ public class UserMapper {
                 .birthDay(user.getBirthDay())
                 .userName(user.getUserName())
                 .passWord(user.getPassWord())
+                .confirmPassWord(user.getConfirmPassWord())
                 .build();
     }
 }
