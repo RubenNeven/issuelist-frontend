@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping()
 public class UserController {
 
     private final UserFeignClient userFeignClient;
@@ -34,7 +34,7 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public String handleLogin(@Valid @ModelAttribute("loginForm") SecurityUser securityUser, BindingResult br){
         if (br.hasErrors()) {
             for (String code : br.getFieldError().getCodes()){
