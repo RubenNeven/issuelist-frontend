@@ -2,6 +2,7 @@ package com.tms.issuelist.service.mapper;
 
 import com.tms.issuelist.controller.dto.SecurityUserDto;
 import com.tms.issuelist.model.SecurityUser;
+import com.tms.issuelist.model.User;
 import org.springframework.stereotype.Component;
 
 @Component

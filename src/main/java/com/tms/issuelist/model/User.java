@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class User {
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Username is required")
     private String userName;
 
     @NotBlank

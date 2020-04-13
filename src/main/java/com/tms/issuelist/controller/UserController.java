@@ -43,7 +43,7 @@ public class UserController {
             return "loginForm";
         }
         userFeignClient.loginUser(securityUserMapper.map(securityUser));
-        return "addUser";
+        return "test";
     }
 
     @GetMapping("/register")
